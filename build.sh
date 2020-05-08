@@ -22,7 +22,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	# MacOS provides a symlink to clang called gcc, but it's nice to be explicit here.
 	compiler="clang"
 
-	other_args="${other_args} -liconv"
+	other_args="${other_args} -liconv -DLLVM_BACKEND_SUPPORT"
 fi
 
 ${compiler} src/main.cpp ${warnings_to_disable} ${libraries} ${other_args} -o odin && ./odin run examples/demo/demo.odin

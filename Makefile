@@ -7,6 +7,7 @@ OS=$(shell uname)
 
 ifeq ($(OS), Darwin)
 	LDFLAGS:=$(LDFLAGS) -liconv
+	CFLAGS:=$(CFLAGS) -DLLVM_BACKEND_SUPPORT
 endif
 
 all: debug demo

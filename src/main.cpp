@@ -321,8 +321,8 @@ i32 linker_stage(lbGenerator *gen) {
 		gbString lib_str = gb_string_make(heap_allocator(), "-L/");
 		defer (gb_string_free(lib_str));
 
-		for_array(i, ir_gen.module.foreign_library_paths) {
-			String lib = ir_gen.module.foreign_library_paths[i];
+		for_array(i, gen->module.foreign_library_paths) {
+			String lib = gen->module.foreign_library_paths[i];
 
 			// NOTE(zangent): Sometimes, you have to use -framework on MacOS.
 			//   This allows you to specify '-f' in a #foreign_system_library,

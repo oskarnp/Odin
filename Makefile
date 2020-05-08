@@ -1,6 +1,6 @@
 DISABLED_WARNINGS=-Wno-switch -Wno-pointer-sign -Wno-tautological-constant-out-of-range-compare -Wno-tautological-compare -Wno-macro-redefined
 LDFLAGS=-pthread -ldl -lm -lstdc++
-CFLAGS=-std=c++11
+CFLAGS=-std=c++11 -I./src
 CC=clang
 
 OS=$(shell uname)

@@ -4,7 +4,7 @@ release_mode=$1
 
 warnings_to_disable="-std=c++11 -Wno-switch -Wno-pointer-sign -Wno-tautological-constant-out-of-range-compare -Wno-tautological-compare -Wno-macro-redefined"
 libraries="-pthread -ldl -lm -lstdc++"
-other_args=""
+other_args="-I./src"
 compiler="clang"
 
 if [ -z "$release_mode" ]; then release_mode="0"; fi

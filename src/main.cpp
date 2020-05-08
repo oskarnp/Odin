@@ -446,14 +446,6 @@ i32 linker_stage(lbGenerator *gen) {
 		}
 	#endif
 
-
-		if (build_context.show_timings) {
-			show_timings(&checker, timings);
-		}
-
-		remove_temp_files(output_base);
-
-
 	#endif
 	}
 

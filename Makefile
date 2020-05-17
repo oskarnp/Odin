@@ -3,13 +3,11 @@ LDFLAGS=-pthread -ldl -lm -lstdc++
 CFLAGS=-std=c++11 -I./src
 CC=clang
 
-LDFLAGS+="-L/usr/local/opt/llvm/lib"
-CFLAGS+="-I/usr/local/opt/llvm/include"
-
-
 OS=$(shell uname)
 
 ifeq ($(OS), Darwin)
+	LDFLAGS+="-L/usr/local/opt/llvm/lib"
+	CFLAGS+="-I/usr/local/opt/llvm/include"
 	LDFLAGS:=$(LDFLAGS) -liconv -lLLVM-C
 	CFLAGS:=$(CFLAGS) -DLLVM_BACKEND_SUPPORT
 endif
